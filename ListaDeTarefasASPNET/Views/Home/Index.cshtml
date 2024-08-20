@@ -1,24 +1,49 @@
 ﻿@model IEnumerable<Tarefa>
 
 <div class="row">
-     
+    <!--DIV DE SELECINAR QUAL CATEGORIA VOCE QUER FILTRAR-->
     <div class="col-md-2">
-        
-    <form asp-action="Filtrar" asp-controller="Home" method="post">
 
-        <div class="mb-3">
-            <label class="form-label">Categoria:</label>
-            <select name="filtro"
-                class="form-select" 
-                asp-items="@(new SelectList(ViewBag.Categorias, "CategoriaId", "Nome", ViewBag.Filtros.CategoriaId))"
-            >
-             <option value="todos">Todos</option>
-            </select>
-        </div>
+        <form asp-action="Filtrar" asp-controller="Home" method="post">
 
-    </form>
-    
-    
+            <div class="mb-3">
+                <label class="form-label">Categoria:</label>
+                <select name="filtro"
+                        class="form-select"
+                        asp-items="@(new SelectList(ViewBag.Categorias, "CategoriaId", "Nome", ViewBag.Filtros.CategoriaId))">
+                    <option value="todos">Todos</option>
+                </select>
+            </div>
+            <!--DIV DE SELECINAR QUAL CATEGORIA VOCE QUER FILTRAR-->
+            <!--DIV DE SELECINAR QUAL A DATA DE VENCIMENTO VOCE QUER FILTRAR-->
+            <div class="mb-3">
+                <label class="form-label">Data de Vencimento:</label>
+                <select name="filtro"
+                        class="form-select"
+                        asp-items="@(new SelectList(ViewBag.VencimentoValores, "Key", "Value", ViewBag.Filtros.Vencimento))">
+                    <option value="todos">Todos</option>
+                </select>
+            </div>
+            <!--DIV DE SELECINAR QUAL A DATA DE VENCIMENTO VOCE QUER FILTRAR-->
+            <!--DIV DE SELECINAR QUAL A SITUAÇÃO DE VENCIMENTO/PENDENDTE VOCE QUER FILTRAR-->
+            <div class="mb-3">
+                <label class="form-label">Situação:</label>
+                <select name="filtro"
+                        class="form-select"
+                        asp-items="@(new SelectList(ViewBag.Status, "StatusId", "Nome", ViewBag.Filtros.StatusId))">
+                    <option value="todos">Todos</option>
+                </select>
+            </div>
+            <!--DIV DE SELECINAR QUAL A SITUAÇÃO DE VENCIMENTO/PENDENDTE VOCE QUER FILTRAR-->
+       
+        <button type="submit" class="btn btn-primary">Filtrar</button>
+       <a asp-action="Index" asp-route-id="" class="btn btn-primary">Limpar</a>
+        </form>
+
+
+
+
+
     </div>
 
 
