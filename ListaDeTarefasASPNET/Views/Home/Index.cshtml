@@ -1,8 +1,27 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model IEnumerable<Tarefa>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="row">
+     
+    <div class="col-md-2">
+        
+    <form asp-action="Filtrar" asp-controller="Home" method="post">
+
+        <div class="mb-3">
+            <label class="form-label">Categoria:</label>
+            <select name="filtro"
+                class="form-select" 
+                asp-items="@(new SelectList(ViewBag.Categorias, "CategoriaId", "Nome", ViewBag.Filtros.CategoriaId))"
+            >
+             <option value="todos">Todos</option>
+            </select>
+        </div>
+
+    </form>
+    
+    
+    </div>
+
+
+    <div class="col-md-10"> </div>
+
 </div>
