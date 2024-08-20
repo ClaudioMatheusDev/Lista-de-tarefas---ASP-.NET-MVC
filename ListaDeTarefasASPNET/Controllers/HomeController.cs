@@ -62,6 +62,12 @@ namespace ListaDeTarefasASPNET.Controllers
             return View(tarefas);
         }
 
-      
+
+        [HttpPost]
+        public IActionResult Filtrar(string[] filtro)
+        {
+
+        }
+
     }
 }
