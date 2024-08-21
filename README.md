@@ -18,15 +18,13 @@ Antes de começar, verifique se você tem os seguintes requisitos instalados:
 
 1. **Clone o repositório:**
 
+2. **Navegue até o diretório do projeto:**
+   
+3. **Restaure as dependências do projeto:**
+
    ```bash
    git clone https://github.com/ClaudioMatheusDev/Lista-de-tarefas---ASP-.NET-MVC.git
-
    
-2.**Navegue até o diretório do projeto:**
- ```bash
-  cd Lista-de-tarefas---ASP-.NET-MVC
-
+   cd Lista-de-tarefas---ASP-.NET-MVC
    
-
-
-
+   dotnet restore
